@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: Cronjob
+metadata:
+  name: example-cron
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: example-cron
+            image: busybox
+            args:
+            - /bin/sh
+            - -c
+            - data: echo Bem Vindo ao k8s !!! ; sleep 30
+          restartPolicy: OnFailure
+

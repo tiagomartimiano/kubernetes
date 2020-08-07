@@ -1,0 +1,19 @@
+piVersion: v1
+kind: Pod
+metadata:
+  name: busybox-configmap
+  namespace: default
+spec:
+  containers:
+  - image: busybox
+    name: busy-configmap
+    command:
+      - sleep
+      - "3600"
+    env:
+    - name: frutas
+    valueFrom:
+      confiMapKeyRef:
+        name: cores-frutas
+        key: prefileta        
+

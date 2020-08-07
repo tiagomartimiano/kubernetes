@@ -1,17 +1,18 @@
 apiVersion: extensions/v1beta1
-kind: DaemonSet
+Kind: ReplicaSet
 metadata:
-  nome: daemon-set-primeiro
+  name: replica-set-primeiro
 spec:
-  template:
+  replicas: 3
+  templace:
     metadata:
       labels:
-        system: Strigus
+        system: exemple
     spec:
       containers:
       - name: nginx
         image: nginx:1.7.9
         ports:
         - containerPort: 80        
-  updateStrategy:
-    type: RollingUpdate        
+              
+            

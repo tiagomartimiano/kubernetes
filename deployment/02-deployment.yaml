@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     run: nginx
-    app: giropops
+    app: exemple
   name: segundo-deployment 
   namespace: default
 spec:
